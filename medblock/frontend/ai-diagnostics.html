@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diagnostics - MedBlock</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/ai-diagnostics.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-mode">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-toggle" class="toggle-switch">
+        <label for="theme-toggle">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </label>
+    </div>
+    
+    <button class="nav-toggle" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 2v2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2h2v2a4 4 0 01-4 4H6a4 4 0 01-4-4V6a4 4 0 014-4h2zm10 2H10V2h8v2zm-6 6V8h8v2h-8zm0 4v-2h8v2h-8z" />
+                        <path class="logo-accent" d="M20 2v2h-2V2h2zm0 6V6h2v2h-2zm0 4v-2h2v2h-2zm0 4v-2h2v2h-2zm-2 2h-2v2h2v-2z" />
+                    </svg>
+                </div>
+                <div class="logo-text">MedBlock</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-file-medical"></i>
+                            <span>My Records</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="ai-diagnostics.html">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Diagnostics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blockchain.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>Blockchain</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-user-md"></i>
+                            <span>Providers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Permissions</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="user-details">
+                        <h4>Emily Johnson</h4>
+                        <p>Patient</p>
+                    </div>
+                </div>
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="dashboard-main">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <div class="header-search">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    
+                    <div class="header-user">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                        <span>Sarah Johnson</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="title-section">
+                    <div class="title-content">
+                        <h1>AI Diagnostics</h1>
+                        <p>Advanced health analysis powered by machine learning</p>
+                    </div>
+                    <div class="title-actions">
+                        <div class="ai-badge">
+                            <i class="fas fa-robot"></i>
+                            <span>Powered by MedBlock AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Models Section -->
+                <div class="models-grid">
+                    <div class="ai-model-card">
+                        <div class="model-header">
+                            <div class="model-icon health">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h2>Health Predictor</h2>
+                        </div>
+                        <div class="model-body">
+                            <p>Analyze your health records to predict potential health risks and provide personalized recommendations.</p>
+                            <div class="model-stats">
+                                <div class="stat">
+                                    <h4>Accuracy</h4>
+                                    <p>94.7%</p>
+                                </div>
+                                <div class="stat">
+                                    <h4>Last Run</h4>
+                                    <p>Today</p>
+                                </div>
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-play"></i>
+                                Run Analysis
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ai-model-card">
+                        <div class="model-header">
+                            <div class="model-icon fraud">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h2>Fraud Detection</h2>
+                        </div>
+                        <div class="model-body">
+                            <p>Protect your medical identity by detecting potential fraudulent activities in your healthcare transactions.</p>
+                            <div class="model-stats">
+                                <div class="stat">
+                                    <h4>Accuracy</h4>
+                                    <p>98.2%</p>
+                                </div>
+                                <div class="stat">
+                                    <h4>Last Run</h4>
+                                    <p>Yesterday</p>
+                                </div>
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-play"></i>
+                                Run Analysis
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ai-model-card">
+                        <div class="model-header">
+                            <div class="model-icon anomaly">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h2>Anomaly Detection</h2>
+                        </div>
+                        <div class="model-body">
+                            <p>Identify unusual patterns in your health data that may require attention from healthcare professionals.</p>
+                            <div class="model-stats">
+                                <div class="stat">
+                                    <h4>Accuracy</h4>
+                                    <p>91.3%</p>
+                                </div>
+                                <div class="stat">
+                                    <h4>Last Run</h4>
+                                    <p>3 days ago</p>
+                                </div>
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-play"></i>
+                                Run Analysis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Analysis Results -->
+                <div class="analysis-section">
+                    <div class="section-header">
+                        <h2>Health Analysis Results</h2>
+                        <div class="section-actions">
+                            <button class="btn-outline">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                            <div class="time-filters">
+                                <button class="time-period" data-period="week">Week</button>
+                                <button class="time-period active" data-period="month">Month</button>
+                                <button class="time-period" data-period="year">Year</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-grid">
+                        <div class="analysis-chart">
+                            <div class="chart-container">
+                                <canvas id="healthRiskChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="analysis-insights">
+                            <h3>AI Insights</h3>
+                            <div class="insights-list">
+                                <div class="insight-item">
+                                    <div class="insight-icon success">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                    <div class="insight-content">
+                                        <h4>Blood Pressure</h4>
+                                        <p>Your blood pressure has improved by 12% in the last month.</p>
+                                    </div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-icon warning">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                    </div>
+                                    <div class="insight-content">
+                                        <h4>Sleep Pattern</h4>
+                                        <p>Irregular sleep patterns detected. Consider maintaining a consistent sleep schedule.</p>
+                                    </div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-icon info">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                    <div class="insight-content">
+                                        <h4>Heart Rate</h4>
+                                        <p>Normal heart rate variations observed during physical activities.</p>
+                                    </div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-icon danger">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <div class="insight-content">
+                                        <h4>Stress Level</h4>
+                                        <p>Elevated stress levels detected in the past week. Consider relaxation techniques.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="recommendations-section">
+                    <div class="section-header">
+                        <h2>Personalized Recommendations</h2>
+                    </div>
+
+                    <div class="recommendations-grid">
+                        <div class="recommendation-card">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-walking"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h3>Increase Physical Activity</h3>
+                                <p>Based on your recent health data, we recommend increasing your daily steps to 8,000 per day.</p>
+                                <div class="recommendation-progress">
+                                    <div class="progress-label">
+                                        <span>Current: 5,420 steps/day</span>
+                                        <span>Goal: 8,000 steps/day</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 68%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recommendation-card">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h3>Dietary Suggestions</h3>
+                                <p>Consider increasing fiber intake and reducing processed foods to improve your cholesterol levels.</p>
+                                <button class="btn-secondary">View Meal Plan</button>
+                            </div>
+                        </div>
+
+                        <div class="recommendation-card">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h3>Heart Health</h3>
+                                <p>Your cardiovascular health score is good, but could be improved with regular aerobic exercise.</p>
+                                <button class="btn-secondary">Exercise Recommendations</button>
+                            </div>
+                        </div>
+
+                        <div class="recommendation-card">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h3>Preventive Checkups</h3>
+                                <p>Based on your age and health profile, we recommend scheduling a routine checkup within the next 3 months.</p>
+                                <button class="btn-secondary">Find Providers</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Dropdown -->
+    <div class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button class="mark-all-read">Mark all as read</button>
+        </div>
+        
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="notification-content">
+                    <p><strong>Dr. Michael Chen</strong> requested access to your medical records</p>
+                    <span class="notification-time">2 hours ago</span>
+                    <div class="notification-actions">
+                        <button class="btn-sm approve">Approve</button>
+                        <button class="btn-sm deny">Deny</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="notification-content">
+                    <p>Your lab results from <strong>City Hospital</strong> are now available</p>
+                    <span class="notification-time">Yesterday</span>
+                    <div class="notification-actions">
+                        <button class="btn-sm view">View</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="notification-content">
+                    <p>Appointment reminder: <strong>Dr. Sarah Williams</strong> tomorrow at 10:00 AM</p>
+                    <span class="notification-time">Yesterday</span>
+                    <div class="notification-actions">
+                        <button class="btn-sm view">View</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="notification-content">
+                    <p>Your health data was accessed by <strong>Dr. James Wilson</strong></p>
+                    <span class="notification-time">3 days ago</span>
+                    <div class="notification-actions">
+                        <button class="btn-sm view">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notification-footer">
+            <a href="#">View all notifications</a>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-robot"></i>
+                <h4>MedBlock Assistant</h4>
+            </div>
+            <button class="close-chat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chat-messages">
+            <div class="message ai">
+                <p>Hello! I'm your MedBlock AI assistant. How can I help you with your healthcare today?</p>
+            </div>
+        </div>
+        
+        <form class="chat-form">
+            <input type="text" placeholder="Type your message..." required>
+            <button type="submit">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="chatbot-toggle">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/ai-diagnostics.js"></script>
+</body>
+</html> 

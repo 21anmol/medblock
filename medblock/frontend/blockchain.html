@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain - MedBlock</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/blockchain.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <div class="toggle-switch">
+            <input type="checkbox" id="theme-toggle-checkbox">
+            <label for="theme-toggle-checkbox"></label>
+        </div>
+        <i class="fas fa-sun"></i>
+    </div>
+    
+    <button class="nav-toggle" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 2v2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2h2v2a4 4 0 01-4 4H6a4 4 0 01-4-4V6a4 4 0 014-4h2zm10 2H10V2h8v2zm-6 6V8h8v2h-8zm0 4v-2h8v2h-8z" />
+                        <path class="logo-accent" d="M20 2v2h-2V2h2zm0 6V6h2v2h-2zm0 4v-2h2v2h-2zm0 4v-2h2v2h-2zm-2 2h-2v2h2v-2z" />
+                    </svg>
+                </div>
+                <div class="logo-text">MedBlock</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-file-medical"></i>
+                            <span>My Records</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="ai-diagnostics.html">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Diagnostics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="blockchain.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>Blockchain</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-user-md"></i>
+                            <span>Providers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Permissions</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar">
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <div class="user-details">
+                        <h4>Emily Johnson</h4>
+                        <p>Patient</p>
+                    </div>
+                </div>
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search records, blocks...">
+                </div>
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="header-user">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar">
+                        <span>Emily Johnson</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="title-section">
+                    <div class="title-content">
+                        <h1>Blockchain Record Security</h1>
+                        <p>View and manage your secure medical record blockchain</p>
+                    </div>
+                    <div class="title-actions">
+                        <button class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Export Ledger
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Blockchain Visualization -->
+                <div class="blockchain-section">
+                    <div class="section-header">
+                        <h2>Your Health Record Chain</h2>
+                        <div class="section-actions">
+                            <button class="btn-outline">
+                                <i class="fas fa-sync-alt"></i>
+                                Refresh
+                            </button>
+                            <button class="btn-outline">
+                                <i class="fas fa-eye"></i>
+                                View All
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="blockchain-visualization">
+                        <div class="blockchain-chain">
+                            <div class="block genesis" data-hash="0000fda54abcd9837">
+                                <div class="block-header">
+                                    <div class="block-type">Genesis Block</div>
+                                    <div class="block-date">Jun 12, 2023</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="block-hash">
+                                        <div class="label">Hash:</div>
+                                        <div class="value">0000fda54abcd9837</div>
+                                    </div>
+                                    <div class="block-prev">
+                                        <div class="label">Prev Hash:</div>
+                                        <div class="value">0000000000000000</div>
+                                    </div>
+                                    <div class="block-data">
+                                        <div class="label">Data:</div>
+                                        <div class="value">Patient Registration</div>
+                                    </div>
+                                </div>
+                                <div class="block-actions">
+                                    <button class="btn-sm verify-btn">
+                                        <i class="fas fa-check-circle"></i>
+                                        Verify
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="block-connector">
+                                <i class="fas fa-link"></i>
+                            </div>
+
+                            <div class="block" data-hash="0023affb78cd45">
+                                <div class="block-header">
+                                    <div class="block-type">Medical Record</div>
+                                    <div class="block-date">Jul 3, 2023</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="block-hash">
+                                        <div class="label">Hash:</div>
+                                        <div class="value">0023affb78cd45</div>
+                                    </div>
+                                    <div class="block-prev">
+                                        <div class="label">Prev Hash:</div>
+                                        <div class="value">0000fda54abcd9837</div>
+                                    </div>
+                                    <div class="block-data">
+                                        <div class="label">Data:</div>
+                                        <div class="value">Blood Test Results</div>
+                                    </div>
+                                </div>
+                                <div class="block-actions">
+                                    <button class="btn-sm verify-btn">
+                                        <i class="fas fa-check-circle"></i>
+                                        Verify
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="block-connector">
+                                <i class="fas fa-link"></i>
+                            </div>
+
+                            <div class="block" data-hash="00452efc89ab56">
+                                <div class="block-header">
+                                    <div class="block-type">Medical Record</div>
+                                    <div class="block-date">Aug 15, 2023</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="block-hash">
+                                        <div class="label">Hash:</div>
+                                        <div class="value">00452efc89ab56</div>
+                                    </div>
+                                    <div class="block-prev">
+                                        <div class="label">Prev Hash:</div>
+                                        <div class="value">0023affb78cd45</div>
+                                    </div>
+                                    <div class="block-data">
+                                        <div class="label">Data:</div>
+                                        <div class="value">X-Ray Images</div>
+                                    </div>
+                                </div>
+                                <div class="block-actions">
+                                    <button class="btn-sm verify-btn">
+                                        <i class="fas fa-check-circle"></i>
+                                        Verify
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="block-connector">
+                                <i class="fas fa-link"></i>
+                            </div>
+
+                            <div class="block latest" data-hash="0067bdef12gh78">
+                                <div class="block-header">
+                                    <div class="block-type">Latest Block</div>
+                                    <div class="block-date">Sep 1, 2023</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="block-hash">
+                                        <div class="label">Hash:</div>
+                                        <div class="value">0067bdef12gh78</div>
+                                    </div>
+                                    <div class="block-prev">
+                                        <div class="label">Prev Hash:</div>
+                                        <div class="value">00452efc89ab56</div>
+                                    </div>
+                                    <div class="block-data">
+                                        <div class="label">Data:</div>
+                                        <div class="value">Prescription Update</div>
+                                    </div>
+                                </div>
+                                <div class="block-actions">
+                                    <button class="btn-sm verify-btn">
+                                        <i class="fas fa-check-circle"></i>
+                                        Verify
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Access Log -->
+                <div class="access-section">
+                    <div class="section-header">
+                        <h2>Access Log</h2>
+                        <div class="section-actions">
+                            <div class="search-field">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search access logs...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="access-log">
+                        <div class="access-log-header">
+                            <div class="col timestamp">Timestamp</div>
+                            <div class="col entity">Entity</div>
+                            <div class="col action">Action</div>
+                            <div class="col record">Record</div>
+                            <div class="col ip-address">IP Address</div>
+                            <div class="col status">Status</div>
+                        </div>
+                        <div class="access-log-body">
+                            <div class="access-log-row">
+                                <div class="col timestamp">2023-09-01 10:23:45</div>
+                                <div class="col entity">Dr. Sarah Chen</div>
+                                <div class="col action">View</div>
+                                <div class="col record">Blood Test Results</div>
+                                <div class="col ip-address">192.168.1.45</div>
+                                <div class="col status success">Authorized</div>
+                            </div>
+                            <div class="access-log-row">
+                                <div class="col timestamp">2023-08-28 14:15:22</div>
+                                <div class="col entity">MedLab Inc.</div>
+                                <div class="col action">Upload</div>
+                                <div class="col record">X-Ray Images</div>
+                                <div class="col ip-address">203.45.67.89</div>
+                                <div class="col status success">Completed</div>
+                            </div>
+                            <div class="access-log-row">
+                                <div class="col timestamp">2023-08-25 09:12:33</div>
+                                <div class="col entity">Unknown</div>
+                                <div class="col action">Access</div>
+                                <div class="col record">Patient History</div>
+                                <div class="col ip-address">78.90.123.45</div>
+                                <div class="col status error">Denied</div>
+                            </div>
+                            <div class="access-log-row">
+                                <div class="col timestamp">2023-08-20 16:45:11</div>
+                                <div class="col entity">Emily Johnson</div>
+                                <div class="col action">Share</div>
+                                <div class="col record">Medical Summary</div>
+                                <div class="col ip-address">192.168.1.101</div>
+                                <div class="col status success">Completed</div>
+                            </div>
+                            <div class="access-log-row">
+                                <div class="col timestamp">2023-08-17 11:30:05</div>
+                                <div class="col entity">Dr. Michael Wilson</div>
+                                <div class="col action">Update</div>
+                                <div class="col record">Prescription</div>
+                                <div class="col ip-address">192.168.1.46</div>
+                                <div class="col status success">Completed</div>
+                            </div>
+                            <div class="access-log-row">
+                                <div class="col timestamp">2023-08-15 08:22:17</div>
+                                <div class="col entity">City Hospital</div>
+                                <div class="col action">View</div>
+                                <div class="col record">Allergies</div>
+                                <div class="col ip-address">203.45.67.90</div>
+                                <div class="col status warning">Pending</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Section -->
+                <div class="security-section">
+                    <div class="section-header">
+                        <h2>Blockchain Security</h2>
+                    </div>
+
+                    <div class="security-cards">
+                        <div class="security-card">
+                            <div class="security-card-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div class="security-card-content">
+                                <h3>Encryption Keys</h3>
+                                <div class="security-status-indicator">
+                                    <span class="status-circle active"></span>
+                                    <span>Encryption active and secure</span>
+                                </div>
+                                <p>Your data is protected with AES-256 encryption. You can rotate your encryption key periodically for enhanced security.</p>
+                                <div class="key-display">
+                                    <code>j8Hf9kD7sN3pQ2rT5vW1xY6zE4cA3bL2</code>
+                                    <button class="copy-btn">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="key-actions">
+                                    <button class="btn-secondary rotate-key">
+                                        <i class="fas fa-sync-alt"></i>
+                                        Rotate Key
+                                    </button>
+                                    <button class="btn-outline">
+                                        <i class="fas fa-download"></i>
+                                        Backup Keys
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="security-card">
+                            <div class="security-card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="security-card-content">
+                                <h3>Blockchain Integrity</h3>
+                                <div class="security-status-indicator">
+                                    <span class="status-circle active"></span>
+                                    <span>All blocks verified and secure</span>
+                                </div>
+                                <p>Your medical blockchain is continuously monitored for integrity. Last verification was performed 2 hours ago with no issues detected.</p>
+                                <button class="btn-secondary">
+                                    <i class="fas fa-check-circle"></i>
+                                    Verify All Blocks
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Dropdown -->
+    <div class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button class="mark-all-read">Mark all as read</button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="notification-content">
+                    <p><strong>Dr. Sarah Chen</strong> has requested access to your medical records.</p>
+                    <span class="notification-time">10 minutes ago</span>
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-sm approve">Approve</button>
+                    <button class="btn-sm deny">Deny</button>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <div class="notification-content">
+                    <p>Your recent lab results have been added to your blockchain record.</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-sm view">View</button>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="notification-content">
+                    <p>Reminder: You have an appointment with Dr. Michael Wilson tomorrow at 10:00 AM.</p>
+                    <span class="notification-time">1 day ago</span>
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-sm view">View</button>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <a href="#">View All Notifications</a>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <div class="chatbot-button">
+            <i class="fas fa-comment-medical"></i>
+        </div>
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <h3>MedBlock Assistant</h3>
+                <button class="close-chatbot"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot">
+                    <div class="message-content">Hello Emily! I'm your MedBlock assistant. How can I help you understand your blockchain records today?</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+                <button class="voice-input"><i class="fas fa-microphone"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/blockchain.js"></script>
+</body>
+</html> 

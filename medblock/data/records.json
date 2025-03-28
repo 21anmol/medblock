@@ -1,0 +1,64 @@
+{
+  "records": [
+    {
+      "id": "rec-001",
+      "user_id": "demo-user",
+      "title": "Annual Checkup",
+      "type": "Examination",
+      "date": "2023-05-15",
+      "provider": "Dr. Sarah Williams",
+      "facility": "City Hospital",
+      "notes": "Patient is in good health. Blood pressure normal. Recommended routine blood work.",
+      "attachments": [],
+      "blockchain_hash": "0x7f83b1..."
+    },
+    {
+      "id": "rec-002",
+      "user_id": "demo-user",
+      "title": "Blood Test Results",
+      "type": "Laboratory",
+      "date": "2023-06-03",
+      "provider": "Dr. Sarah Williams",
+      "facility": "City Hospital Lab",
+      "notes": "All blood work within normal ranges. Slight elevation in cholesterol.",
+      "attachments": [],
+      "blockchain_hash": "0x3a9e8c..."
+    },
+    {
+      "id": "rec-003",
+      "user_id": "demo-user",
+      "title": "X-Ray Images",
+      "type": "Imaging",
+      "date": "2023-08-15",
+      "provider": "Dr. Michael Wilson",
+      "facility": "MedLab Inc.",
+      "notes": "Chest X-ray shows no abnormalities. Lungs clear.",
+      "attachments": [],
+      "blockchain_hash": "0x8f4d21..."
+    },
+    {
+      "id": "rec-004",
+      "user_id": "demo-user",
+      "title": "New Test Record",
+      "type": "Examination",
+      "date": "2025-03-28",
+      "provider": "Test Provider",
+      "facility": "Test Facility",
+      "notes": "This is a test record created via API",
+      "attachments": [],
+      "blockchain_hash": "0x54A5dA..."
+    },
+    {
+      "id": "rec-005",
+      "user_id": "demo-user",
+      "title": "New Test Record",
+      "type": "Examination",
+      "date": "2025-03-28",
+      "provider": "Test Provider",
+      "facility": "Test Facility",
+      "notes": "This is a test record created via API",
+      "attachments": [],
+      "blockchain_hash": "0xC6191a..."
+    }
+  ]
+}

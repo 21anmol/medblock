@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedBlock - Decentralized Healthcare Record System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body class="dark-mode">
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <div class="toggle-switch">
+            <input type="checkbox" id="theme-toggle-checkbox">
+            <label for="theme-toggle-checkbox"></label>
+        </div>
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <header>
+        <div class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8 2v2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2h2v2a4 4 0 01-4 4H6a4 4 0 01-4-4V6a4 4 0 014-4h2zm10 2H10V2h8v2zm-6 6V8h8v2h-8zm0 4v-2h8v2h-8z" />
+                    <path class="logo-accent" d="M20 2v2h-2V2h2zm0 6V6h2v2h-2zm0 4v-2h2v2h-2zm0 4v-2h2v2h-2zm-2 2h-2v2h2v-2z" />
+                </svg>
+            </div>
+            <div class="logo-text">MedBlock</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="diagnostics.html">AI Diagnostics</a></li>
+                <li><a href="blockchain.html">Blockchain</a></li>
+                <li><a href="login.html" class="btn-primary">Login</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Secure Healthcare Records with <span class="accent">Blockchain</span> & <span class="accent-secondary">AI</span></h1>
+                <p>MedBlock combines cutting-edge machine learning with secure blockchain technology to revolutionize how healthcare data is stored, accessed, and analyzed.</p>
+                <div class="hero-buttons">
+                    <a href="login.html" class="btn-primary">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login / Register
+                    </a>
+                    <a href="#learn-more" class="btn-outline">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- 3D Animation will be placed here -->
+                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_uwh9uhdt.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <h2>Why Choose <span class="accent">MedBlock</span>?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up">
+                    <div class="icon-container">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enhanced Security</h3>
+                    <p>Your medical records are secured using blockchain technology, making them tamper-proof and immutable.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-container">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Advanced machine learning models analyze your health data to provide personalized insights and early disease detection.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-container">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Access Control</h3>
+                    <p>You decide who can access your medical records with granular permission controls.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-container">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Access</h3>
+                    <p>Access your medical records anytime, anywhere with our responsive mobile application.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How <span class="accent">MedBlock</span> Works</h2>
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Upload Your Records</h3>
+                        <p>Securely upload your medical records to the MedBlock platform.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Blockchain Storage</h3>
+                        <p>Your data is encrypted, hashed, and stored on the blockchain.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>AI Analysis</h3>
+                        <p>Our machine learning models analyze your data for insights.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Control Access</h3>
+                        <p>Grant access to healthcare providers using smart contracts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"MedBlock has revolutionized how I manage my healthcare information. The AI insights have helped me make better health decisions."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"As a doctor, MedBlock gives me secure access to my patients' complete medical history, allowing me to provide better care."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Chen">
+                            <div>
+                                <h4>Dr. Michael Chen</h4>
+                                <p>Cardiologist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Secure Your Health Data?</h2>
+                <p>Join thousands of users who trust MedBlock with their healthcare information.</p>
+                <a href="login.html" class="btn-primary">Get Started Now</a>
+            </div>
+            <div class="cta-image">
+                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ukfgurr8.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 2v2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2h2v2a4 4 0 01-4 4H6a4 4 0 01-4-4V6a4 4 0 014-4h2zm10 2H10V2h8v2zm-6 6V8h8v2h-8zm0 4v-2h8v2h-8z" />
+                            <path class="logo-accent" d="M20 2v2h-2V2h2zm0 6V6h2v2h-2zm0 4v-2h2v2h-2zm0 4v-2h2v2h-2zm-2 2h-2v2h2v-2z" />
+                        </svg>
+                    </div>
+                    <div class="logo-text">MedBlock</div>
+                </div>
+                <p>Revolutionizing healthcare with blockchain and AI technology.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="diagnostics.html">AI Diagnostics</a></li>
+                    <li><a href="blockchain.html">Blockchain</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> support@medblock.io</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Health Street, Med City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MedBlock. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <div class="chatbot-button">
+            <i class="fas fa-comment-medical"></i>
+        </div>
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <h3>MedBlock Assistant</h3>
+                <button class="close-chatbot"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot">
+                    <div class="message-content">Hello! I'm your MedBlock assistant. How can I help you today?</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+                <button class="voice-input"><i class="fas fa-microphone"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html> 

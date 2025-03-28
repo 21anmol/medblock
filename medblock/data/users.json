@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": "demo-user",
+      "name": "Emily Johnson",
+      "email": "emily.johnson@example.com",
+      "role": "Patient",
+      "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+    }
+  ]
+}

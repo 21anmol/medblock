@@ -1,0 +1,20 @@
+# Flask and web server
+Flask>=2.0.0
+flask-cors>=3.0.0
+Werkzeug>=2.0.0
+
+# Database
+SQLAlchemy>=1.4.0
+
+# Authentication and security
+PyJWT>=2.0.0
+cryptography>=3.4.0
+
+# Environment and configuration
+python-dotenv>=0.15.0
+
+# Utilities
+requests>=2.25.0
+
+# For development - full ML and blockchain dependencies can be
+# installed separately using requirements-full.txt 

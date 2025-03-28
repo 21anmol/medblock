@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MedBlock</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <div class="toggle-switch">
+            <input type="checkbox" id="theme-toggle-checkbox">
+            <label for="theme-toggle-checkbox"></label>
+        </div>
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <div class="login-container">
+        <div class="login-left">
+            <div class="login-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 2v2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2h2v2a4 4 0 01-4 4H6a4 4 0 01-4-4V6a4 4 0 014-4h2zm10 2H10V2h8v2zm-6 6V8h8v2h-8zm0 4v-2h8v2h-8z" />
+                            <path class="logo-accent" d="M20 2v2h-2V2h2zm0 6V6h2v2h-2zm0 4v-2h2v2h-2zm0 4v-2h2v2h-2zm-2 2h-2v2h2v-2z" />
+                        </svg>
+                    </div>
+                    <div class="logo-text">MedBlock</div>
+                </div>
+                <h1>Sign In to MedBlock</h1>
+                <p>Secure access to your health records</p>
+            </div>
+
+            <div class="login-form-container">
+                <div id="login-error" class="error-message"></div>
+                
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <h2>Internet Identity Authentication</h2>
+                        <p>MedBlock uses Internet Computer Protocol (ICP) for secure, decentralized authentication.</p>
+                        
+                        <div class="icp-info">
+                            <div class="icp-logo">
+                                <img src="https://internetcomputer.org/img/IC_logo.svg" alt="Internet Computer">
+                            </div>
+                            <div class="icp-text">
+                                <h3>Internet Identity</h3>
+                                <p>A blockchain authentication system that allows you to securely login without passwords.</p>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary login-button">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login with Internet Identity
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="login-options">
+                    <p>Don't have an Internet Identity?</p>
+                    <a href="https://identity.ic0.app/" target="_blank" class="btn-outline">
+                        <i class="fas fa-user-plus"></i>
+                        Create Internet Identity
+                    </a>
+                </div>
+                
+                <div class="login-divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="demo-login">
+                    <h3>Try Demo Account</h3>
+                    <p>For demonstration purposes only</p>
+                    <button id="demo-login" class="btn-secondary">
+                        <i class="fas fa-flask"></i>
+                        Enter Demo Mode
+                    </button>
+                </div>
+            </div>
+            
+            <div class="login-footer">
+                <p>&copy; 2025 MedBlock. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Support</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login-right">
+            <div class="feature-highlights">
+                <h2>Secure Health Records on the Blockchain</h2>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Decentralized Security</h3>
+                            <p>Your medical data is encrypted and stored on the blockchain, ensuring maximum security and privacy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>AI-Powered Insights</h3>
+                            <p>Advanced machine learning provides personalized health insights and anomaly detection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Granular Access Control</h3>
+                            <p>You control who can access your medical information with detailed permission settings.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="login-animation">
+                    <div class="blockchain-animation">
+                        <div class="block-chain">
+                            <div class="block block-1"></div>
+                            <div class="connector"></div>
+                            <div class="block block-2"></div>
+                            <div class="connector"></div>
+                            <div class="block block-3"></div>
+                        </div>
+                        <div class="data-lines">
+                            <div class="data-line"></div>
+                            <div class="data-line"></div>
+                            <div class="data-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Use script without importing to avoid module issues when running directly
+        document.addEventListener('DOMContentLoaded', function() {
+            // Demo login functionality
+            const demoLoginBtn = document.getElementById('demo-login');
+            if (demoLoginBtn) {
+                demoLoginBtn.addEventListener('click', function() {
+                    console.log('Demo login clicked');
+                    // Set demo mode flag in localStorage
+                    localStorage.setItem('demo_mode', 'true');
+                    
+                    // Show success notification
+                    showDemoNotification();
+                    
+                    // Redirect to dashboard after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 1500);
+                });
+            }
+            
+            // Handle redirect if any
+            const params = new URLSearchParams(window.location.search);
+            const redirect = params.get('redirect');
+            
+            if (redirect) {
+                const loginForm = document.getElementById('login-form');
+                if (loginForm) {
+                    loginForm.action = '#';
+                    loginForm.onsubmit = function(e) {
+                        e.preventDefault();
+                        // Auth will be handled by auth.js
+                        console.log('Login form submitted with redirect: ' + redirect);
+                    };
+                }
+            }
+            
+            // Helper to show demo notification
+            function showDemoNotification() {
+                const notification = document.createElement('div');
+                notification.className = 'notification success';
+                
+                notification.innerHTML = `
+                    <div class="notification-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Demo Mode Activated</h4>
+                        <p>You are now using MedBlock in demo mode.</p>
+                    </div>
+                    <button class="close-notification">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                const closeButton = notification.querySelector('.close-notification');
+                closeButton.addEventListener('click', function() {
+                    notification.classList.add('closing');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                });
+                
+                setTimeout(() => {
+                    notification.classList.add('closing');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html> 

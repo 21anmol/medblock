@@ -1,0 +1,9 @@
+MedBlock Fraud Detection Model (Placeholder)
+Created: 2025-03-28T15:51:41.586826
+Version: 0.1.0
+
+Features: transaction_amount, transaction_time, user_history, ip_address, device_info, location, access_pattern, record_modification_frequency, unusual_record_access
+Detection Categories: identity_theft, unauthorized_access, record_tampering, billing_fraud, insurance_fraud, prescription_fraud
+
+Note: This is a placeholder model file for demonstration purposes.
+In a production environment, this would be a trained ML model.

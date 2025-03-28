@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | MedBlock</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-mode">
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <div class="toggle-switch">
+            <input type="checkbox" id="theme-toggle-checkbox">
+            <label for="theme-toggle-checkbox"></label>
+        </div>
+        <i class="fas fa-sun"></i>
+    </div>
+    
+    <button class="nav-toggle" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 2v2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2h2v2a4 4 0 01-4 4H6a4 4 0 01-4-4V6a4 4 0 014-4h2zm10 2H10V2h8v2zm-6 6V8h8v2h-8zm0 4v-2h8v2h-8z" />
+                        <path class="logo-accent" d="M20 2v2h-2V2h2zm0 6V6h2v2h-2zm0 4v-2h2v2h-2zm0 4v-2h2v2h-2zm-2 2h-2v2h2v-2z" />
+                    </svg>
+                </div>
+                <div class="logo-text">MedBlock</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-file-medical"></i>
+                            <span>My Records</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="ai-diagnostics.html">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Diagnostics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blockchain.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>Blockchain</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-user-md"></i>
+                            <span>Providers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Permissions</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar">
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <div class="user-details">
+                        <h4>Emily Johnson</h4>
+                        <p>Patient</p>
+                    </div>
+                </div>
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search records, doctors, etc.">
+                </div>
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="header-user">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar">
+                        <span>Emily Johnson</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="welcome-section">
+                    <div class="welcome-text">
+                        <h1>Welcome back, <span class="accent">Emily</span></h1>
+                        <p>Here's what's happening with your health records today.</p>
+                    </div>
+                    <div class="welcome-actions">
+                        <button class="btn-primary upload-btn">
+                            <i class="fas fa-upload"></i>
+                            <span>Upload Medical Record</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>26</h3>
+                            <p>Total Records</p>
+                        </div>
+                        <div class="stat-change up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+2 this month</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4</h3>
+                            <p>Care Providers</p>
+                        </div>
+                        <div class="stat-change">
+                            <span>No change</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>18</h3>
+                            <p>Data Exchanges</p>
+                        </div>
+                        <div class="stat-change up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+3 this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card risk-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Low</h3>
+                            <p>Health Risk</p>
+                        </div>
+                        <div class="stat-change">
+                            <div class="risk-indicator">
+                                <div class="risk-level" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Health Analytics -->
+                    <div class="dashboard-card health-analytics">
+                        <div class="card-header">
+                            <h2>Health Analytics</h2>
+                            <div class="card-actions">
+                                <button class="time-period active">Weekly</button>
+                                <button class="time-period">Monthly</button>
+                                <button class="time-period">Yearly</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="healthChart" height="250"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card recent-activity">
+                        <div class="card-header">
+                            <h2>Recent Activity</h2>
+                            <button class="view-all">View All</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon blue">
+                                        <i class="fas fa-file-upload"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h3>Blood Test Results Uploaded</h3>
+                                        <p>You uploaded new blood test results from General Hospital.</p>
+                                        <span class="activity-time">Today, 10:30 AM</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon green">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h3>Dr. Sarah Chen Accessed Records</h3>
+                                        <p>Dr. Sarah Chen accessed your medical records.</p>
+                                        <span class="activity-time">Yesterday, 3:45 PM</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon purple">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h3>AI Analysis Completed</h3>
+                                        <p>AI completed analysis of your recent X-ray images.</p>
+                                        <span class="activity-time">Aug 25, 2023, 2:15 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Appointments -->
+                    <div class="dashboard-card appointments">
+                        <div class="card-header">
+                            <h2>Upcoming Appointments</h2>
+                            <button class="schedule-btn">
+                                <i class="fas fa-plus"></i>
+                                Schedule
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="appointment-list">
+                                <div class="appointment-item">
+                                    <div class="appointment-date">
+                                        <div class="month">Sep</div>
+                                        <div class="day">15</div>
+                                    </div>
+                                    <div class="appointment-details">
+                                        <h3>Annual Physical Examination</h3>
+                                        <p><i class="fas fa-user-md"></i> Dr. Michael Wilson</p>
+                                        <p><i class="fas fa-clock"></i> 10:00 AM - 11:00 AM</p>
+                                        <p><i class="fas fa-map-marker-alt"></i> General Hospital, Room 305</p>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn-outline">Reschedule</button>
+                                        <button class="btn-outline">Cancel</button>
+                                    </div>
+                                </div>
+                                <div class="appointment-item">
+                                    <div class="appointment-date">
+                                        <div class="month">Sep</div>
+                                        <div class="day">22</div>
+                                    </div>
+                                    <div class="appointment-details">
+                                        <h3>Dental Check-up</h3>
+                                        <p><i class="fas fa-user-md"></i> Dr. Rebecca Lee</p>
+                                        <p><i class="fas fa-clock"></i> 2:30 PM - 3:30 PM</p>
+                                        <p><i class="fas fa-map-marker-alt"></i> City Dental Clinic</p>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="btn-outline">Reschedule</button>
+                                        <button class="btn-outline">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Health Recommendations -->
+                    <div class="dashboard-card recommendations">
+                        <div class="card-header">
+                            <h2>AI Health Recommendations</h2>
+                            <div class="ai-badge">
+                                <i class="fas fa-robot"></i>
+                                Powered by AI
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="recommendation-list">
+                                <div class="recommendation-item">
+                                    <div class="recommendation-icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <div class="recommendation-details">
+                                        <h3>Increase Cardiovascular Exercise</h3>
+                                        <p>Based on your recent vitals, we recommend increasing cardio to 30 minutes, 3 times per week.</p>
+                                        <div class="recommendation-actions">
+                                            <button class="btn-text"><i class="fas fa-thumbs-up"></i> Helpful</button>
+                                            <button class="btn-text"><i class="fas fa-thumbs-down"></i> Not Helpful</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recommendation-item">
+                                    <div class="recommendation-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="recommendation-details">
+                                        <h3>Dietary Suggestions</h3>
+                                        <p>Your blood work indicates slightly elevated cholesterol. Consider reducing saturated fats and increasing fiber intake.</p>
+                                        <div class="recommendation-actions">
+                                            <button class="btn-text"><i class="fas fa-thumbs-up"></i> Helpful</button>
+                                            <button class="btn-text"><i class="fas fa-thumbs-down"></i> Not Helpful</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Record Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload Medical Record</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop files here or <span class="browse-link">browse</span></p>
+                    <p class="upload-info">Supported formats: PDF, JPG, PNG, DICOM</p>
+                    <input type="file" id="fileUpload" hidden multiple>
+                </div>
+                <div class="form-group">
+                    <label for="recordType">Record Type</label>
+                    <select id="recordType">
+                        <option value="">Select Record Type</option>
+                        <option value="lab">Lab Results</option>
+                        <option value="imaging">Medical Imaging</option>
+                        <option value="prescription">Prescription</option>
+                        <option value="clinical">Clinical Notes</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="recordDate">Record Date</label>
+                    <input type="date" id="recordDate">
+                </div>
+                <div class="form-group">
+                    <label for="provider">Healthcare Provider</label>
+                    <input type="text" id="provider" placeholder="e.g., General Hospital">
+                </div>
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" placeholder="Add any notes about this record"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelUpload">Cancel</button>
+                <button class="btn-primary" id="confirmUpload">Upload and Secure</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Dropdown -->
+    <div class="notification-dropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button class="mark-all-read">Mark all as read</button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="notification-content">
+                    <p><strong>Dr. Sarah Chen</strong> has requested access to your medical records.</p>
+                    <span class="notification-time">10 minutes ago</span>
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-sm approve">Approve</button>
+                    <button class="btn-sm deny">Deny</button>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <div class="notification-content">
+                    <p>Your recent lab results have been added to your blockchain record.</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-sm view">View</button>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="notification-content">
+                    <p>Reminder: You have an appointment with Dr. Michael Wilson tomorrow at 10:00 AM.</p>
+                    <span class="notification-time">1 day ago</span>
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-sm view">View</button>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <a href="#">View All Notifications</a>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <div class="chatbot-button">
+            <i class="fas fa-comment-medical"></i>
+        </div>
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <h3>MedBlock Assistant</h3>
+                <button class="close-chatbot"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot">
+                    <div class="message-content">Hello Emily! I'm your MedBlock assistant. How can I help you today?</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+                <button class="voice-input"><i class="fas fa-microphone"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 

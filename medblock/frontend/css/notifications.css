@@ -1,0 +1,310 @@
+/* Notification Styles */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border-radius: var(--border-radius-md);
+    background-color: var(--surface);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    max-width: 350px;
+    width: 100%;
+    z-index: 9999;
+    overflow: hidden;
+    animation: notificationSlideIn 0.3s ease forwards;
+}
+
+.notification.closing {
+    animation: notificationSlideOut 0.3s ease forwards;
+}
+
+.notification.info {
+    border-left: 4px solid var(--accent-blue);
+}
+
+.notification.success {
+    border-left: 4px solid #2ecc71;
+}
+
+.notification.warning {
+    border-left: 4px solid #f1c40f;
+}
+
+.notification.error {
+    border-left: 4px solid #e74c3c;
+}
+
+.notification-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.notification.info .notification-icon {
+    color: var(--accent-blue);
+}
+
+.notification.success .notification-icon {
+    color: #2ecc71;
+}
+
+.notification.warning .notification-icon {
+    color: #f1c40f;
+}
+
+.notification.error .notification-icon {
+    color: #e74c3c;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.notification-content p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.close-notification {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    margin-left: 1rem;
+}
+
+.close-notification:hover {
+    color: var(--text);
+}
+
+/* Multiple notifications stacking */
+.notification:nth-child(2) {
+    bottom: calc(30px + 100px + 10px);
+    z-index: 9998;
+}
+
+.notification:nth-child(3) {
+    bottom: calc(30px + 200px + 20px);
+    z-index: 9997;
+}
+
+/* Animations */
+@keyframes notificationSlideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes notificationSlideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .notification {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: none;
+    }
+    
+    .notification:nth-child(2) {
+        bottom: calc(20px + 100px + 10px);
+    }
+    
+    .notification:nth-child(3) {
+        bottom: calc(20px + 200px + 20px);
+    }
+}
+
+/* MedBlock notification system styles */
+
+/* Notification container */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    max-width: 350px;
+}
+
+/* Individual notification */
+.notification {
+    background: var(--dark-surface-2);
+    color: var(--light-text);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 300px;
+    max-width: 100%;
+    animation: slide-in 0.3s ease-out forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Notification after element for left border */
+.notification::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent-blue);
+    border-radius: 4px 0 0 4px;
+}
+
+/* Success notification */
+.notification.success::after {
+    background: var(--accent-green);
+}
+
+/* Error notification */
+.notification.error::after {
+    background: var(--accent-red);
+}
+
+/* Warning notification */
+.notification.warning::after {
+    background: var(--accent-yellow);
+}
+
+/* Info notification */
+.notification.info::after {
+    background: var(--accent-blue);
+}
+
+/* Notification message */
+.notification-message {
+    flex: 1;
+    padding-right: 10px;
+}
+
+/* Close button */
+.notification-close {
+    background: transparent;
+    border: none;
+    color: var(--dark-text-secondary);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+}
+
+.notification-close:hover {
+    color: var(--light-text);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Slide in animation */
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide out animation */
+.notification.hide {
+    animation: slide-out 0.3s ease-in forwards;
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Demo mode indicator */
+.demo-mode-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--accent-blue);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9000;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Light mode adjustments */
+.light-mode .notification {
+    background: var(--light-surface);
+    color: var(--dark-text);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .notification-close {
+    color: var(--light-text-secondary);
+}
+
+.light-mode .notification-close:hover {
+    color: var(--dark-text);
+    background: rgba(0, 0, 0, 0.05);
+} 

@@ -1,0 +1,9 @@
+MedBlock Anomaly Detection Model (Placeholder)
+Created: 2025-03-28T15:51:41.589924
+Version: 0.1.0
+
+Features: heart_rate, blood_pressure, temperature, respiratory_rate, oxygen_saturation, glucose_level, white_blood_cell_count, red_blood_cell_count, hemoglobin, platelets
+Detection Categories: vital_sign_anomaly, lab_result_anomaly, medication_response_anomaly, treatment_outcome_anomaly, diagnostic_inconsistency
+
+Note: This is a placeholder model file for demonstration purposes.
+In a production environment, this would be a trained ML model.

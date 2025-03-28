@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedBlock API Testing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <style>
+        /* API Testing specific styles */
+        .api-test-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 25px;
+            background: var(--dark-surface);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .api-test-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .api-endpoints {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .api-test-btn {
+            padding: 12px 15px;
+            background: var(--dark-surface-2);
+            border: 1px solid var(--accent-blue);
+            border-radius: 8px;
+            color: var(--light-text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .api-test-btn:hover {
+            background: var(--accent-blue-transparent);
+            transform: translateY(-2px);
+        }
+        
+        .api-test-btn .method {
+            background: var(--accent-blue);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .api-test-btn .method.post {
+            background: var(--accent-green);
+        }
+        
+        #api-result {
+            background: var(--dark-surface-2);
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 300px;
+            max-height: 600px;
+            overflow: auto;
+        }
+        
+        .api-result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--accent-blue);
+        }
+        
+        .api-result-header.error {
+            border-bottom-color: var(--accent-red);
+        }
+        
+        .status-code {
+            background: var(--accent-blue-transparent);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        
+        pre.api-response-data {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            overflow: auto;
+            line-height: 1.5;
+            font-family: monospace;
+        }
+        
+        pre.api-response-error {
+            background: rgba(255,0,0,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            overflow: auto;
+            font-family: monospace;
+            color: var(--accent-red);
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: var(--accent-blue);
+            font-size: 1.2em;
+            position: relative;
+        }
+        
+        .loading:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 3px solid transparent;
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .navigation a {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: var(--dark-surface-2);
+            color: var(--light-text);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .navigation a:hover {
+            background: var(--accent-blue-transparent);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-toggle-checkbox">
+        <label for="theme-toggle-checkbox">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+    
+    <div class="api-test-container">
+        <div class="api-test-header">
+            <h1>MedBlock API Testing</h1>
+            <p>Use this interface to test the MedBlock API endpoints</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="blockchain.html">Blockchain</a>
+            <a href="login.html">Login</a>
+        </div>
+        
+        <h2>Available Endpoints</h2>
+        <div class="api-endpoints">
+            <!-- Health and Status -->
+            <button class="api-test-btn" data-endpoint="/api/health" data-method="GET">
+                API Health Check <span class="method">GET</span>
+            </button>
+            
+            <!-- Authentication -->
+            <button class="api-test-btn" data-endpoint="/api/auth/login" data-method="POST">
+                Login <span class="method post">POST</span>
+            </button>
+            
+            <!-- User Profile -->
+            <button class="api-test-btn" data-endpoint="/api/users/profile" data-method="GET">
+                User Profile <span class="method">GET</span>
+            </button>
+            
+            <!-- Records -->
+            <button class="api-test-btn" data-endpoint="/api/records" data-method="GET">
+                Get Records <span class="method">GET</span>
+            </button>
+            
+            <button class="api-test-btn" data-endpoint="/api/records" data-method="POST">
+                Create Record <span class="method post">POST</span>
+            </button>
+            
+            <!-- ML Models -->
+            <button class="api-test-btn" data-endpoint="/api/ml/fraud/detect" data-method="POST">
+                Fraud Detection <span class="method post">POST</span>
+            </button>
+            
+            <button class="api-test-btn" data-endpoint="/api/ml/health/predict" data-method="POST">
+                Health Prediction <span class="method post">POST</span>
+            </button>
+            
+            <button class="api-test-btn" data-endpoint="/api/ml/anomaly/detect" data-method="POST">
+                Anomaly Detection <span class="method post">POST</span>
+            </button>
+            
+            <!-- Blockchain -->
+            <button class="api-test-btn" data-endpoint="/api/blockchain/verify" data-method="POST">
+                Blockchain Verify <span class="method post">POST</span>
+            </button>
+            
+            <button class="api-test-btn" data-endpoint="/api/blockchain/access-log" data-method="GET">
+                Access Log <span class="method">GET</span>
+            </button>
+        </div>
+        
+        <h2>API Response</h2>
+        <div id="api-result">
+            <div class="api-result-header">
+                <h3>Select an endpoint to test</h3>
+            </div>
+            <p>Click on one of the endpoint buttons above to test the API</p>
+        </div>
+    </div>
+    
+    <!-- Font Awesome Icons (for light/dark mode) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    
+    <!-- Main and API Test JS -->
+    <script src="js/main.js"></script>
+    <script src="js/test_api.js"></script>
+</body>
+</html> 

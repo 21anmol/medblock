@@ -1,0 +1,9 @@
+MedBlock Health Prediction Model (Placeholder)
+Created: 2025-03-28T15:51:41.588732
+Version: 0.1.0
+
+Features: age, gender, blood_pressure, cholesterol, glucose, heart_rate, bmi, exercise_hours_per_week, sleep_hours
+Targets: diabetes_risk, heart_disease_risk, obesity_risk
+
+Note: This is a placeholder model file for demonstration purposes.
+In a production environment, this would be a trained ML model.

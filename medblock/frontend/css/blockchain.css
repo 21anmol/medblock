@@ -1,0 +1,491 @@
+/* ===== Blockchain Page Styles ===== */
+
+/* Title Section */
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.title-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Blockchain Section */
+.blockchain-section {
+    margin-bottom: 2.5rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.section-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Blockchain Visualization */
+.blockchain-visualization {
+    overflow-x: auto;
+    padding: 1.5rem 0;
+}
+
+.blockchain-chain {
+    display: flex;
+    align-items: center;
+    min-width: max-content;
+    padding: 0 1rem;
+}
+
+.block {
+    width: 280px;
+    background: linear-gradient(145deg, var(--surface), var(--surface-2));
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.block.genesis {
+    border-left: 4px solid #3498db;
+}
+
+.block.latest {
+    border-left: 4px solid #2ecc71;
+}
+
+.block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.block-type {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.block-date {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.block-content {
+    margin-bottom: 1.5rem;
+}
+
+.block-hash, .block-prev, .block-data {
+    display: flex;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.block-hash .label,
+.block-prev .label,
+.block-data .label {
+    width: 80px;
+    color: var(--text-secondary);
+}
+
+.block-hash .value,
+.block-prev .value,
+.block-data .value {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    word-break: break-all;
+}
+
+.block-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.block-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.block-connector::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+    z-index: -1;
+}
+
+/* Access Log Section */
+.access-section {
+    margin-bottom: 2.5rem;
+}
+
+.search-field {
+    position: relative;
+    width: 300px;
+}
+
+.search-field input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    background-color: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
+    color: var(--text);
+    font-size: 0.875rem;
+}
+
+.search-field i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.access-log {
+    background-color: var(--surface);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.access-log-header {
+    display: flex;
+    background-color: var(--surface-2);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.access-log-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.access-log-row {
+    display: flex;
+    padding: 1rem 1.5rem;
+    font-size: 0.875rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color var(--transition-fast);
+}
+
+.access-log-row:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.access-log-row:last-child {
+    border-bottom: none;
+}
+
+.col {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.col.timestamp {
+    width: 20%;
+}
+
+.col.entity {
+    width: 18%;
+}
+
+.col.action {
+    width: 12%;
+}
+
+.col.record {
+    width: 20%;
+}
+
+.col.ip-address {
+    width: 15%;
+}
+
+.col.status {
+    width: 15%;
+    font-weight: 600;
+}
+
+.col.status.success {
+    color: #2ecc71;
+}
+
+.col.status.error {
+    color: #e74c3c;
+}
+
+.col.status.warning {
+    color: #f1c40f;
+}
+
+/* Security Section */
+.security-section {
+    margin-bottom: 2.5rem;
+}
+
+.security-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.security-card {
+    display: flex;
+    background-color: var(--surface);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.security-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.security-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    color: white;
+    font-size: 2.5rem;
+}
+
+.security-card-content {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.security-card-content h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.security-card-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.security-status-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.status-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    background-color: var(--text-secondary);
+}
+
+.status-circle.active {
+    background-color: #2ecc71;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.key-display {
+    background-color: var(--surface-2);
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.key-display code {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    color: var(--accent-blue);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    transition: color var(--transition-fast);
+}
+
+.copy-btn:hover {
+    color: var(--accent-blue);
+}
+
+.key-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .security-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 991px) {
+    .blockchain-chain {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .block {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .block-connector {
+        width: 100%;
+        height: 60px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .block-connector::before {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: auto;
+        width: 2px;
+        height: 100%;
+    }
+    
+    .block-connector i {
+        transform: rotate(90deg);
+    }
+    
+    .security-card {
+        flex-direction: column;
+    }
+    
+    .security-card-icon {
+        width: 100%;
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-section,
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .title-actions,
+    .section-actions {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .access-log-header {
+        display: none;
+    }
+    
+    .access-log-row {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .col {
+        width: 100% !important;
+        padding: 0.25rem 0;
+    }
+    
+    .col.timestamp::before {
+        content: 'Timestamp: ';
+        font-weight: 600;
+    }
+    
+    .col.entity::before {
+        content: 'Entity: ';
+        font-weight: 600;
+    }
+    
+    .col.action::before {
+        content: 'Action: ';
+        font-weight: 600;
+    }
+    
+    .col.record::before {
+        content: 'Record: ';
+        font-weight: 600;
+    }
+    
+    .col.ip-address::before {
+        content: 'IP Address: ';
+        font-weight: 600;
+    }
+    
+    .col.status::before {
+        content: 'Status: ';
+        font-weight: 600;
+        color: var(--text);
+    }
+} 
